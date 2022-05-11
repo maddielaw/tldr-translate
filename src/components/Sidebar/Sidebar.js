@@ -1,9 +1,13 @@
 import React from 'react';
 import './Sidebar.css'
+import Form from '../Form/Form'
 
 const Sidebar = () => {
   return (
-    <h1>I'm a sidebar</h1>
+    <section>
+      <h1>tl;dr translate</h1>
+      <Form />
+    </section>
   );
 }
  
