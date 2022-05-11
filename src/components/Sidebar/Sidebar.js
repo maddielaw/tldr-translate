@@ -4,7 +4,7 @@ import Form from '../Form/Form'
 
 const Sidebar = () => {
   return (
-    <section>
+    <section className='sidebar'>
       <h1>tl;dr translate</h1>
       <Form />
     </section>
