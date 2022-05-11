@@ -1,9 +1,14 @@
 import React from 'react';
 import './CardContainer.css'
+import Card from '../Card/Card'
 
 const CardContainer = () => {
   return (
-    <h1>I'm a card container</h1>
+    <section className='card-container'>
+      <h1>Your tl;drs</h1>
+      <Card />
+
+    </section>
   );
 }
  
