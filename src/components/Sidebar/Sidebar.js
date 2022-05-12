@@ -2,11 +2,11 @@ import React from 'react';
 import './Sidebar.css'
 import Form from '../Form/Form'
 
-const Sidebar = () => {
+const Sidebar = ({ submitTldr }) => {
   return (
     <section className='sidebar'>
       <h1>tl;dr translate</h1>
-      <Form />
+      <Form submitTldr={submitTldr}/>
     </section>
   );
 }
