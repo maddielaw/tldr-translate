@@ -19,6 +19,7 @@ const Form = ({ submitTldr }) => {
     })
   }
 
+  // refactor to hook up AI API
   const triggerFetch = () => {
     fetchTldr()
     .then(data => {
@@ -29,30 +30,28 @@ const Form = ({ submitTldr }) => {
     })
   }
 
-  const packageTldr = () => {
+  const clearInputs = () => {
+    setFormFields({
+      title: '',
+      text: ''
+    })
+  }
+
+  useEffect(() => {
     const newTldr = {
       id: uuidv4(),
       title: formFields.title,
       tldr: formFields.tldr
     }
-    return newTldr;
-  }
+    submitTldr(newTldr)
+    clearInputs()
+  }, [formFields.tldr])
 
-  const clearInputs = () => {
-    setFormFields({
-      title: '',
-      text: '',
-      tldr: ''
-    })
-  }
-  
+
   const handleSubmit = (e) => {
     e.preventDefault()
     triggerFetch()
-    submitTldr(packageTldr())
-    clearInputs()
   }
-
 
   return (
     <form className='form-container' onSubmit={(e) => handleSubmit(e)}>
@@ -63,7 +62,7 @@ const Form = ({ submitTldr }) => {
         value={formFields.title}
         onChange={(e) => handleChange(e)}
         required
-      />
+        />
       <input 
         type='text'
         placeholder='enter tl;dr text here'
@@ -71,9 +70,8 @@ const Form = ({ submitTldr }) => {
         value={formFields.text}
         onChange={(e) => handleChange(e)}
         required
-      />
+        />
       <button>submit!</button>
-
     </form>
   );
 }
