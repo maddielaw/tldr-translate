@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Form.css'
+import fetchTldr from '../../apiCalls';
+import { v4 as uuidv4 } from 'uuid';
 
-const Form = () => {
+
+const Form = ({ submitTldr }) => {
 
   const [formFields, setFormFields] = useState({
     title: '',
-    text: ''
+    text: '',
+    tldr: ''
   })
-
 
   const handleChange = (e) => {
     setFormFields({
@@ -16,8 +19,43 @@ const Form = () => {
     })
   }
 
+  const triggerFetch = () => {
+    fetchTldr()
+    .then(data => {
+      setFormFields({
+        ...formFields,
+        tldr: data[0].description
+      })
+    })
+  }
+
+  const packageTldr = () => {
+    const newTldr = {
+      id: uuidv4(),
+      title: formFields.title,
+      tldr: formFields.tldr
+    }
+    return newTldr;
+  }
+
+  const clearInputs = () => {
+    setFormFields({
+      title: '',
+      text: '',
+      tldr: ''
+    })
+  }
+  
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    triggerFetch()
+    submitTldr(packageTldr())
+    clearInputs()
+  }
+
+
   return (
-    <form className='form-container'>
+    <form className='form-container' onSubmit={(e) => handleSubmit(e)}>
       <input 
         type='text'
         placeholder='enter text title'
