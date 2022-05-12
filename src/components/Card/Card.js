@@ -1,9 +1,12 @@
 import React from 'react';
 import './Card.css'
 
-const Card = () => {
+const Card = ({ title, tldr }) => {
   return (
-    <h1>I'm a card!</h1>
+    <section className='card'>
+      <h1>{title}</h1>
+      <p>{tldr}</p>
+    </section>
   );
 }
  
