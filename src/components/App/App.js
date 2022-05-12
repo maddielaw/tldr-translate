@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div className="App">
       <Sidebar submitTldr={submitTldr}/>
-      <CardContainer />
+      <CardContainer tldrList={tldrList}/>
       
     </div>
   );
