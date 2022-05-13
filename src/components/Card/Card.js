@@ -12,4 +12,4 @@ const Card = ({ title, tldr }) => {
   }
 }
  
-export default Card;
+export default Card
