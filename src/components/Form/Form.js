@@ -33,17 +33,20 @@ const Form = ({ submitTldr }) => {
   const clearInputs = () => {
     setFormFields({
       title: '',
-      text: ''
+      text: '',
+      tldr: ''
     })
   }
 
   useEffect(() => {
-    const newTldr = {
-      id: uuidv4(),
-      title: formFields.title,
-      tldr: formFields.tldr
+    if (formFields.title && formFields.tldr) {
+      const newTldr = {
+        id: uuidv4(),
+        title: formFields.title,
+        tldr: formFields.tldr
+      }
+      submitTldr(newTldr)
     }
-    submitTldr(newTldr)
     clearInputs()
   }, [formFields.tldr])
 
@@ -57,16 +60,18 @@ const Form = ({ submitTldr }) => {
     <form className='form-container' onSubmit={(e) => handleSubmit(e)}>
       <input 
         type='text'
-        placeholder='enter text title'
+        placeholder='enter tldr title'
         name='title'
         value={formFields.title}
         onChange={(e) => handleChange(e)}
         required
         />
-      <input 
+      <textarea
         type='text'
-        placeholder='enter tl;dr text here'
+        placeholder='enter text to translate'
         name='text'
+        cols='50'
+        rows='8'
         value={formFields.text}
         onChange={(e) => handleChange(e)}
         required
