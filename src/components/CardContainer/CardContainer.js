@@ -11,9 +11,13 @@ const CardContainer = ({ tldrList }) => {
   }
 
   return (
-    <section className='card-container'>
-      <h1>Your tl;drs</h1>
-      {tldrList && createTldrCards()}
+    <section className='card-section'>
+      <div>
+        <h1>Your Translations</h1>
+      </div>
+      <section className='card-container'>
+        {tldrList && createTldrCards()}
+      </section>
     </section>
   );
 }
