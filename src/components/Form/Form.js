@@ -43,6 +43,7 @@ const Form = ({ submitTldr }) => {
       const newTldr = {
         id: uuidv4(),
         title: formFields.title,
+        text: formFields.text,
         tldr: formFields.tldr
       }
       submitTldr(newTldr)

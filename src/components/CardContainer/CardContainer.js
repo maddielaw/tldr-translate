@@ -6,7 +6,7 @@ const CardContainer = ({ tldrList }) => {
 
   const createTldrCards = () => {
     return tldrList.map(tldr => {
-      return <Card id={tldr.id} key={tldr.id} title={tldr.title} tldr={tldr.tldr}/>
+      return <Card id={tldr.id} key={tldr.id} title={tldr.title} originalText={tldr.text} tldr={tldr.tldr}/>
     })
   }
 
