@@ -3,7 +3,6 @@ import './Form.css'
 import fetchTldr from '../../apiCalls';
 import { v4 as uuidv4 } from 'uuid';
 
-
 const Form = ({ submitTldr }) => {
 
   const [formFields, setFormFields] = useState({
@@ -20,7 +19,6 @@ const Form = ({ submitTldr }) => {
   }
 
   const getAIResponse = () => {
-    // fires post method with argument of the package method which has the prompt from state
    fetchTldr(formFields.text)
     .then(data => {
       let cleanedText = data.choices[0].text.slice(2)
