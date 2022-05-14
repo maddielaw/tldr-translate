@@ -8,11 +8,11 @@ const Card = ({ title, originalText, tldr }) => {
         <h1>{title}</h1>
         <section className='card-text-container'>
           <div className='original-prompt'>
-            <p>Original Text:</p>
+            <p className='original-prompt-header'>Original Text :</p>
             <p>{originalText}</p>
           </div>
           <div className='tldr-response'>
-            <p>tl;dr:</p>
+            <p className='tldr-response-header'>tl;dr :</p>
             <p>{tldr}</p>
           </div>
         </section>
