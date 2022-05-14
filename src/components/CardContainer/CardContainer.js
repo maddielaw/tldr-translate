@@ -2,7 +2,7 @@ import React from 'react';
 import './CardContainer.css'
 import Card from '../Card/Card'
 
-const CardContainer = ({ tldrList }) => {
+const CardContainer = ({ tldrList, isLoading, error}) => {
 
   const createTldrCards = () => {
     return tldrList.map(tldr => {
@@ -16,7 +16,9 @@ const CardContainer = ({ tldrList }) => {
         <h1>Your Translations</h1>
       </div>
       <section className='card-container'>
-        {!tldrList.length && <p className='no-tldrs-yet'>No tl;dr translations yet! Submit the form to the left to get started.</p>}
+        {isLoading && <p className='loading'>Translations loading...</p>}
+        {error && <p className='error'>Whoops! Something went wrong: {error}</p>}
+        {!tldrList.length && !isLoading && <p className='no-tldrs-yet'>No tl;dr translations yet! Submit the form to the left to get started.</p>}
         {tldrList && createTldrCards()}
       </section>
     </section>
