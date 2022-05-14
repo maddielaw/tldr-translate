@@ -76,7 +76,7 @@ const Form = ({ submitTldr }) => {
         onChange={(e) => handleChange(e)}
         required
         />
-      <button>submit!</button>
+      <button className='submit'>submit!</button>
     </form>
   );
 }
