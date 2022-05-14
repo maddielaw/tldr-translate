@@ -16,8 +16,13 @@ const fetchTldr = (prompt) => {
       Authorization: `Bearer ${process.env.REACT_APP_OPENAI_KEY}`,
     },
     body: JSON.stringify(completion)
-  }).then(response => response.json())
-
+  }).then(response => {
+    if (!response.ok) {
+      throw new Error('Failed to receive response')
+    } else {
+      return response.json()
+    }
+  })
 }
 
 
