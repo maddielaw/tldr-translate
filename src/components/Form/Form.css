@@ -1,0 +1,21 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 40%;
+  margin-top: 5em;
+}
+
+.submit {
+  border-radius: 50px;
+  height: 2em;
+  border: none;
+  background-color: #DAEAFE;
+}
+
+.form-container input,
+.form-container textarea {
+  background-color: #DAEAFE;
+  border: none;
+  border-radius: 5px;
+}
