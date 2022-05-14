@@ -1,0 +1,12 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  background-color: #0162C1;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sidebar h1 {
+  font-size: 35px;
+  color: white;
+}

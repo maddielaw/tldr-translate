@@ -4,7 +4,52 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  border: 1px solid black;
   border-radius: 5px;
-  margin: 5px;
+  margin-bottom: 40px;
+  font-family: 'Cabin', sans-serif;
+  background-color: #0162C1;
 }
+
+.card h1 {
+  color: white;
+  font-size: 20px;
+}
+
+.original-prompt,
+.tldr-response {
+  background-color: #DAEAFE;
+  padding: 7px;
+}
+
+.tldr-response {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.original-prompt-header,
+.tldr-response-header {
+  font-weight: 700;
+}
+
+.card-title-container {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  justify-content: space-between;
+}
+
+.delete-btn {
+  border-radius: 50px;
+  height: 1.7em;
+  width: 1.7em;
+  border: none;
+  background-color: #DAE9FE;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #75aef3;
+}
+
+
+

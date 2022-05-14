@@ -1,9 +1,28 @@
 .card-section {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 80%;
+}
+
+.card-section h1 {
+  font-family: 'Roboto', sans-serif;
+  padding: .5em;
 }
 
 .card-container {
   padding: 20px;
   height: 100vh;
+  align-self: center;
+}
+
+.card-container-header {
+  align-self: center;
+}
+
+.no-tldrs-yet,
+.error,
+.loading {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
 }
