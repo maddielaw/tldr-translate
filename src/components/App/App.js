@@ -9,7 +9,7 @@ const App = () => {
   const [tldrList, setTldrList] = useState([])
 
   const submitTldr = (newTldr) => {
-    setTldrList([...tldrList, newTldr])
+    setTldrList([newTldr, ...tldrList])
   }
 
 
