@@ -12,10 +12,11 @@ const CardContainer = ({ tldrList }) => {
 
   return (
     <section className='card-section'>
-      <div>
+      <div className='card-container-header'>
         <h1>Your Translations</h1>
       </div>
       <section className='card-container'>
+        {!tldrList.length && <p className='no-tldrs-yet'>No tl;dr translations yet! Submit the form to the left to get started.</p>}
         {tldrList && createTldrCards()}
       </section>
     </section>
