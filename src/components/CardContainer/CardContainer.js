@@ -2,11 +2,11 @@ import React from 'react';
 import './CardContainer.css'
 import Card from '../Card/Card'
 
-const CardContainer = ({ tldrList, isLoading, error}) => {
+const CardContainer = ({ tldrList, isLoading, error, deleteTldr}) => {
 
   const createTldrCards = () => {
     return tldrList.map(tldr => {
-      return <Card id={tldr.id} key={tldr.id} title={tldr.title} originalText={tldr.text} tldr={tldr.tldr}/>
+      return <Card id={tldr.id} key={tldr.id} title={tldr.title} originalText={tldr.text} tldr={tldr.tldr} deleteTldr={deleteTldr}/>
     })
   }
 
