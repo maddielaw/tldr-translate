@@ -19,13 +19,14 @@ const Form = ({ submitTldr }) => {
     })
   }
 
-  // refactor to hook up AI API
-  const triggerFetch = () => {
-    fetchTldr()
+  const getAIResponse = () => {
+    // fires post method with argument of the package method which has the prompt from state
+   fetchTldr(formFields.text)
     .then(data => {
+      let cleanedText = data.choices[0].text.slice(2)
       setFormFields({
         ...formFields,
-        tldr: data[0].description
+        tldr: cleanedText
       })
     })
   }
@@ -54,7 +55,7 @@ const Form = ({ submitTldr }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    triggerFetch()
+    getAIResponse()
   }
 
   return (
