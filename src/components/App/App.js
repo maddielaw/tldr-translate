@@ -14,11 +14,16 @@ const App = () => {
     setTldrList([newTldr, ...tldrList])
   }
 
+  const deleteTldr = (id) => {
+    const filteredTldrs = tldrList.filter(tldr => tldr.id !== id)
+    setTldrList([...filteredTldrs])
+  }
+
 
   return (
     <div className="App">
       <Sidebar submitTldr={submitTldr} setIsLoading={setIsLoading} setError={setError}/>
-      <CardContainer tldrList={tldrList} isLoading={isLoading} error={error}/>
+      <CardContainer tldrList={tldrList} isLoading={isLoading} error={error} deleteTldr={deleteTldr}/>
       
     </div>
   );
