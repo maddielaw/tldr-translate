@@ -3,7 +3,6 @@ import './Form.css'
 import fetchTldr from '../../apiCalls';
 import { v4 as uuidv4 } from 'uuid';
 
-
 const Form = ({ submitTldr }) => {
 
   const [formFields, setFormFields] = useState({
@@ -19,13 +18,13 @@ const Form = ({ submitTldr }) => {
     })
   }
 
-  // refactor to hook up AI API
-  const triggerFetch = () => {
-    fetchTldr()
+  const getAIResponse = () => {
+   fetchTldr(formFields.text)
     .then(data => {
+      let cleanedText = data.choices[0].text.slice(2)
       setFormFields({
         ...formFields,
-        tldr: data[0].description
+        tldr: cleanedText
       })
     })
   }
@@ -54,7 +53,7 @@ const Form = ({ submitTldr }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    triggerFetch()
+    getAIResponse()
   }
 
   return (

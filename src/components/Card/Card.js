@@ -12,7 +12,7 @@ const Card = ({ title, originalText, tldr }) => {
             <p>{originalText}</p>
           </div>
           <div className='tldr-response'>
-            <p>Your tl;dr:</p>
+            <p>tl;dr:</p>
             <p>{tldr}</p>
           </div>
         </section>
