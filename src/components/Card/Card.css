@@ -31,5 +31,25 @@
   font-weight: 700;
 }
 
+.card-title-container {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  justify-content: space-between;
+}
+
+.delete-btn {
+  border-radius: 50px;
+  height: 1.7em;
+  width: 1.7em;
+  border: none;
+  background-color: #DAE9FE;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #75aef3;
+}
+
 
 
