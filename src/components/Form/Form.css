@@ -10,7 +10,12 @@
   border-radius: 50px;
   height: 2em;
   border: none;
-  background-color: #DAEAFE;
+  background-color: #aecff7;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #75aef3;
 }
 
 .form-container input,
