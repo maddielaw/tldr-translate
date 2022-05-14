@@ -20,7 +20,9 @@
   align-self: center;
 }
 
-.no-tldrs-yet {
+.no-tldrs-yet,
+.error,
+.loading {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
 }
